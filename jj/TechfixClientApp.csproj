@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4701F967-5D3B-46A6-9362-7AAB1377A6EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TechfixClientApp</RootNamespace>
+    <AssemblyName>jj</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\techFixClientService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryManagementPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryManagementPage.Designer.cs">
+      <DependentUpon>InventoryManagementPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderManagementPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderManagementPage.Designer.cs">
+      <DependentUpon>OrderManagementPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationManagementPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuotationManagementPage.Designer.cs">
+      <DependentUpon>QuotationManagementPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierLoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierLoginPage.Designer.cs">
+      <DependentUpon>SupplierLoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierManagementPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierManagementPage.Designer.cs">
+      <DependentUpon>SupplierManagementPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TechFixHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechFixHomePage.Designer.cs">
+      <DependentUpon>TechFixHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersPage.Designer.cs">
+      <DependentUpon>OrdersPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuotationRequest.Designer.cs">
+      <DependentUpon>QuotationRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuotationsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuotationsPage.Designer.cs">
+      <DependentUpon>QuotationsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierHomePage.Designer.cs">
+      <DependentUpon>SupplierHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TechFixLoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechFixLoginPage.Designer.cs">
+      <DependentUpon>TechFixLoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffManagementPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffManagementPage.Designer.cs">
+      <DependentUpon>StaffManagementPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSelectionPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSelectionPage.Designer.cs">
+      <DependentUpon>UserSelectionPage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="InventoryManagementPage.resx">
+      <DependentUpon>InventoryManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderManagementPage.resx">
+      <DependentUpon>OrderManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotationManagementPage.resx">
+      <DependentUpon>QuotationManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierHomePage.resx">
+      <DependentUpon>SupplierHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierLoginPage.resx">
+      <DependentUpon>SupplierLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierManagementPage.resx">
+      <DependentUpon>SupplierManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechFixHomePage.resx">
+      <DependentUpon>TechFixHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersPage.resx">
+      <DependentUpon>OrdersPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotationRequest.resx">
+      <DependentUpon>QuotationRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QuotationsPage.resx">
+      <DependentUpon>QuotationsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechFixLoginPage.resx">
+      <DependentUpon>TechFixLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffManagementPage.resx">
+      <DependentUpon>StaffManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSelectionPage.resx">
+      <DependentUpon>UserSelectionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.AddNewProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.AddNewStaffResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.AddNewSupplierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.CreateNewOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.CreateNewQuotationRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.DeleteProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetAllOrderItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetAllOrdersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetAllProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetAllQuotationDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetAllQuotationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetAllStaffsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetStaffUsernameAndPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetSuppliersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.GetSupplierUsernameAndPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.isStaffUsernameNotExistsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.isUsernameNotExistsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.OrderItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.Quotation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.QuotationDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.Supplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.TechFixStaff.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.UpdateProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.UpdateStaffResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechfixClientApp.techFixClientService.UpdateSupplierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\techFixClientService\TechFixWebServices.wsdl" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_back_24dp_666666_FILL0_wght300_GRAD0_opsz241.png" />
+    <None Include="Resources\arrow_back_24dp_999999_FILL0_wght300_GRAD0_opsz24.png" />
+    <None Include="Connected Services\techFixClientService\TechFixWebServices.disco" />
+    <None Include="Connected Services\techFixClientService\configuration91.svcinfo" />
+    <None Include="Connected Services\techFixClientService\configuration.svcinfo" />
+    <None Include="Connected Services\techFixClientService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\logo.png" />
+    <None Include="Resources\Techfix-logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\techFixClientService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

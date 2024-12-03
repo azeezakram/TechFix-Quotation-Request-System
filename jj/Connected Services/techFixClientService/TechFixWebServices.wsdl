@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="isStaffUsernameNotExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isStaffUsernameNotExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isStaffUsernameNotExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStaffUsernameAndPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStaffUsernameAndPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStaffUsernameAndPasswordResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newStaff" type="tns:TechFixStaff" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TechFixStaff">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="staffId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="staffName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewStaffResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStaffs">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllStaffsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStaffsResult" type="tns:ArrayOfTechFixStaff" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTechFixStaff">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TechFixStaff" nillable="true" type="tns:TechFixStaff" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updatedStaff" type="tns:TechFixStaff" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStaffResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="staffId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteStaffResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newProduct" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="unitPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="discount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="createdAt" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="updatedAt" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewProductResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProducts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProductsResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateProductResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteProductResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearTheInventory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearTheInventoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClearTheInventoryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newSupplier" type="tns:Supplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Supplier">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="supplierName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewSupplierResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isUsernameNotExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isUsernameNotExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isUsernameNotExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierUsernameAndPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierUsernameAndPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSupplierUsernameAndPasswordResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSuppliers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSuppliersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSuppliersResult" type="tns:ArrayOfSupplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSupplier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true" type="tns:Supplier" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSupplierId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSupplierIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updatedSupplier" type="tns:Supplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSupplierResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSupplierResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewQuotationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newQuotation" type="tns:Quotation" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemList" type="tns:ArrayOfQuotationDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Quotation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="supplierName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="requestDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="approveDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuotationDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuotationDetail" nillable="true" type="tns:QuotationDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuotationDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="quotationDetailId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="unitPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="supplierDiscount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="requestDiscount" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateNewQuotationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewQuotationRequestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRequestDiscount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quotationDetailId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestDiscount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRequestDiscountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRequestDiscountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetQuotationApproved">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetQuotationApprovedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetQuotationApprovedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllQuotations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllQuotationsResult" type="tns:ArrayOfQuotation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQuotation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Quotation" nillable="true" type="tns:Quotation" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllQuotationDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllQuotationDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllQuotationDetailsResult" type="tns:ArrayOfQuotationDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllOrders">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllOrdersResult" type="tns:ArrayOfOrder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Order">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="supplierName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="totalAmount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllOrderItems">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllOrderItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllOrderItemsResult" type="tns:ArrayOfOrderItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderItem" nillable="true" type="tns:OrderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="orderItemId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="unitPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="subTotal" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateNewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newOrder" type="tns:Order" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderItemList" type="tns:ArrayOfOrderItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewOrderResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="isStaffUsernameNotExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:isStaffUsernameNotExists" />
+  </wsdl:message>
+  <wsdl:message name="isStaffUsernameNotExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:isStaffUsernameNotExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffUsernameAndPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStaffUsernameAndPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffUsernameAndPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStaffUsernameAndPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewStaff" />
+  </wsdl:message>
+  <wsdl:message name="AddNewStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStaffs" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStaffsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStaff" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteStaff" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewProductSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewProduct" />
+  </wsdl:message>
+  <wsdl:message name="AddNewProductSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearTheInventorySoapIn">
+    <wsdl:part name="parameters" element="tns:ClearTheInventory" />
+  </wsdl:message>
+  <wsdl:message name="ClearTheInventorySoapOut">
+    <wsdl:part name="parameters" element="tns:ClearTheInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewSupplier" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="isUsernameNotExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:isUsernameNotExists" />
+  </wsdl:message>
+  <wsdl:message name="isUsernameNotExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:isUsernameNotExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierUsernameAndPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierUsernameAndPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierUsernameAndPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierUsernameAndPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppliersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppliersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierId" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSupplier" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSupplier" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewQuotationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewQuotationRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewQuotationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewQuotationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestDiscountSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRequestDiscount" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestDiscountSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRequestDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetQuotationApprovedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetQuotationApproved" />
+  </wsdl:message>
+  <wsdl:message name="SetQuotationApprovedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetQuotationApprovedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllQuotations" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllQuotationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQuotationDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllQuotationDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQuotationDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllQuotationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllOrders" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOrderItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllOrderItems" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOrderItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllOrderItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TechFixWebServicesSoap">
+    <wsdl:operation name="isStaffUsernameNotExists">
+      <wsdl:input message="tns:isStaffUsernameNotExistsSoapIn" />
+      <wsdl:output message="tns:isStaffUsernameNotExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffUsernameAndPassword">
+      <wsdl:input message="tns:GetStaffUsernameAndPasswordSoapIn" />
+      <wsdl:output message="tns:GetStaffUsernameAndPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewStaff">
+      <wsdl:input message="tns:AddNewStaffSoapIn" />
+      <wsdl:output message="tns:AddNewStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaffs">
+      <wsdl:input message="tns:GetAllStaffsSoapIn" />
+      <wsdl:output message="tns:GetAllStaffsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaff">
+      <wsdl:input message="tns:UpdateStaffSoapIn" />
+      <wsdl:output message="tns:UpdateStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStaff">
+      <wsdl:input message="tns:DeleteStaffSoapIn" />
+      <wsdl:output message="tns:DeleteStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProduct">
+      <wsdl:input message="tns:AddNewProductSoapIn" />
+      <wsdl:output message="tns:AddNewProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input message="tns:GetAllProductsSoapIn" />
+      <wsdl:output message="tns:GetAllProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input message="tns:UpdateProductSoapIn" />
+      <wsdl:output message="tns:UpdateProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input message="tns:DeleteProductSoapIn" />
+      <wsdl:output message="tns:DeleteProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearTheInventory">
+      <wsdl:input message="tns:ClearTheInventorySoapIn" />
+      <wsdl:output message="tns:ClearTheInventorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSupplier">
+      <wsdl:input message="tns:AddNewSupplierSoapIn" />
+      <wsdl:output message="tns:AddNewSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isUsernameNotExists">
+      <wsdl:input message="tns:isUsernameNotExistsSoapIn" />
+      <wsdl:output message="tns:isUsernameNotExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierUsernameAndPassword">
+      <wsdl:input message="tns:GetSupplierUsernameAndPasswordSoapIn" />
+      <wsdl:output message="tns:GetSupplierUsernameAndPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <wsdl:input message="tns:GetSuppliersSoapIn" />
+      <wsdl:output message="tns:GetSuppliersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierId">
+      <wsdl:input message="tns:GetSupplierIdSoapIn" />
+      <wsdl:output message="tns:GetSupplierIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplier">
+      <wsdl:input message="tns:UpdateSupplierSoapIn" />
+      <wsdl:output message="tns:UpdateSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <wsdl:input message="tns:DeleteSupplierSoapIn" />
+      <wsdl:output message="tns:DeleteSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewQuotationRequest">
+      <wsdl:input message="tns:CreateNewQuotationRequestSoapIn" />
+      <wsdl:output message="tns:CreateNewQuotationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestDiscount">
+      <wsdl:input message="tns:UpdateRequestDiscountSoapIn" />
+      <wsdl:output message="tns:UpdateRequestDiscountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetQuotationApproved">
+      <wsdl:input message="tns:SetQuotationApprovedSoapIn" />
+      <wsdl:output message="tns:SetQuotationApprovedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotations">
+      <wsdl:input message="tns:GetAllQuotationsSoapIn" />
+      <wsdl:output message="tns:GetAllQuotationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotationDetails">
+      <wsdl:input message="tns:GetAllQuotationDetailsSoapIn" />
+      <wsdl:output message="tns:GetAllQuotationDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <wsdl:input message="tns:GetAllOrdersSoapIn" />
+      <wsdl:output message="tns:GetAllOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrderItems">
+      <wsdl:input message="tns:GetAllOrderItemsSoapIn" />
+      <wsdl:output message="tns:GetAllOrderItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOrder">
+      <wsdl:input message="tns:CreateNewOrderSoapIn" />
+      <wsdl:output message="tns:CreateNewOrderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TechFixWebServicesSoap" type="tns:TechFixWebServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="isStaffUsernameNotExists">
+      <soap:operation soapAction="http://tempuri.org/isStaffUsernameNotExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffUsernameAndPassword">
+      <soap:operation soapAction="http://tempuri.org/GetStaffUsernameAndPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewStaff">
+      <soap:operation soapAction="http://tempuri.org/AddNewStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaffs">
+      <soap:operation soapAction="http://tempuri.org/GetAllStaffs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaff">
+      <soap:operation soapAction="http://tempuri.org/UpdateStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStaff">
+      <soap:operation soapAction="http://tempuri.org/DeleteStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProduct">
+      <soap:operation soapAction="http://tempuri.org/AddNewProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearTheInventory">
+      <soap:operation soapAction="http://tempuri.org/ClearTheInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSupplier">
+      <soap:operation soapAction="http://tempuri.org/AddNewSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUsernameNotExists">
+      <soap:operation soapAction="http://tempuri.org/isUsernameNotExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierUsernameAndPassword">
+      <soap:operation soapAction="http://tempuri.org/GetSupplierUsernameAndPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <soap:operation soapAction="http://tempuri.org/GetSuppliers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierId">
+      <soap:operation soapAction="http://tempuri.org/GetSupplierId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplier">
+      <soap:operation soapAction="http://tempuri.org/UpdateSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <soap:operation soapAction="http://tempuri.org/DeleteSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewQuotationRequest">
+      <soap:operation soapAction="http://tempuri.org/CreateNewQuotationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestDiscount">
+      <soap:operation soapAction="http://tempuri.org/UpdateRequestDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetQuotationApproved">
+      <soap:operation soapAction="http://tempuri.org/SetQuotationApproved" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotations">
+      <soap:operation soapAction="http://tempuri.org/GetAllQuotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotationDetails">
+      <soap:operation soapAction="http://tempuri.org/GetAllQuotationDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap:operation soapAction="http://tempuri.org/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrderItems">
+      <soap:operation soapAction="http://tempuri.org/GetAllOrderItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOrder">
+      <soap:operation soapAction="http://tempuri.org/CreateNewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TechFixWebServicesSoap12" type="tns:TechFixWebServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="isStaffUsernameNotExists">
+      <soap12:operation soapAction="http://tempuri.org/isStaffUsernameNotExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffUsernameAndPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetStaffUsernameAndPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewStaff">
+      <soap12:operation soapAction="http://tempuri.org/AddNewStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaffs">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStaffs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaff">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStaff">
+      <soap12:operation soapAction="http://tempuri.org/DeleteStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProduct">
+      <soap12:operation soapAction="http://tempuri.org/AddNewProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap12:operation soapAction="http://tempuri.org/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearTheInventory">
+      <soap12:operation soapAction="http://tempuri.org/ClearTheInventory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSupplier">
+      <soap12:operation soapAction="http://tempuri.org/AddNewSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUsernameNotExists">
+      <soap12:operation soapAction="http://tempuri.org/isUsernameNotExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierUsernameAndPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetSupplierUsernameAndPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <soap12:operation soapAction="http://tempuri.org/GetSuppliers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierId">
+      <soap12:operation soapAction="http://tempuri.org/GetSupplierId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplier">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewQuotationRequest">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewQuotationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestDiscount">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRequestDiscount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetQuotationApproved">
+      <soap12:operation soapAction="http://tempuri.org/SetQuotationApproved" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotations">
+      <soap12:operation soapAction="http://tempuri.org/GetAllQuotations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotationDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetAllQuotationDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap12:operation soapAction="http://tempuri.org/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrderItems">
+      <soap12:operation soapAction="http://tempuri.org/GetAllOrderItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOrder">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TechFixWebServices">
+    <wsdl:port name="TechFixWebServicesSoap" binding="tns:TechFixWebServicesSoap">
+      <soap:address location="http://localhost:49706/TechFixWebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TechFixWebServicesSoap12" binding="tns:TechFixWebServicesSoap12">
+      <soap12:address location="http://localhost:49706/TechFixWebServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

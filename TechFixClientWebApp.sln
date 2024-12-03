@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechFixWebService", "UserService\TechFixWebService.csproj", "{45FEB001-2C40-405C-8115-8569036799D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechfixClientApp", "jj\TechfixClientApp.csproj", "{4701F967-5D3B-46A6-9362-7AAB1377A6EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45FEB001-2C40-405C-8115-8569036799D4} = {45FEB001-2C40-405C-8115-8569036799D4}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45FEB001-2C40-405C-8115-8569036799D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FEB001-2C40-405C-8115-8569036799D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FEB001-2C40-405C-8115-8569036799D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FEB001-2C40-405C-8115-8569036799D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4701F967-5D3B-46A6-9362-7AAB1377A6EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4701F967-5D3B-46A6-9362-7AAB1377A6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4701F967-5D3B-46A6-9362-7AAB1377A6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4701F967-5D3B-46A6-9362-7AAB1377A6EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FAB7868-DA92-43D3-9294-E4AAF23C529F}
+	EndGlobalSection
+EndGlobal

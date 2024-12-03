@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddNewProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newProduct" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="unitPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="discount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="createdAt" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="updatedAt" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewProductResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProducts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProductsResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newProduct" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateProductResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newSupplier" type="tns:Supplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Supplier">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="supplierName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewSupplierResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSuppliers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSuppliersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSuppliersResult" type="tns:ArrayOfSupplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSupplier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true" type="tns:Supplier" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateQuotationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newQuotation" type="tns:Quotation" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemList" type="tns:ArrayOfQuotationDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Quotation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="requestDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="approveDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuotationDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuotationDetail" nillable="true" type="tns:QuotationDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuotationDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="quotationDetailId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="unitPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="supplierDiscount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="requestedDiscount" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateQuotationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateQuotationRequestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddNewProductSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewProduct" />
+  </wsdl:message>
+  <wsdl:message name="AddNewProductSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewSupplier" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppliersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppliersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateQuotationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateQuotationRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateQuotationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateQuotationRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TechFixWebServicesSoap">
+    <wsdl:operation name="AddNewProduct">
+      <wsdl:input message="tns:AddNewProductSoapIn" />
+      <wsdl:output message="tns:AddNewProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input message="tns:GetAllProductsSoapIn" />
+      <wsdl:output message="tns:GetAllProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input message="tns:UpdateProductSoapIn" />
+      <wsdl:output message="tns:UpdateProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSupplier">
+      <wsdl:input message="tns:AddNewSupplierSoapIn" />
+      <wsdl:output message="tns:AddNewSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <wsdl:input message="tns:GetSuppliersSoapIn" />
+      <wsdl:output message="tns:GetSuppliersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuotationRequest">
+      <wsdl:input message="tns:CreateQuotationRequestSoapIn" />
+      <wsdl:output message="tns:CreateQuotationRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TechFixWebServicesSoap" type="tns:TechFixWebServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNewProduct">
+      <soap:operation soapAction="http://tempuri.org/AddNewProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSupplier">
+      <soap:operation soapAction="http://tempuri.org/AddNewSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <soap:operation soapAction="http://tempuri.org/GetSuppliers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuotationRequest">
+      <soap:operation soapAction="http://tempuri.org/CreateQuotationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TechFixWebServicesSoap12" type="tns:TechFixWebServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNewProduct">
+      <soap12:operation soapAction="http://tempuri.org/AddNewProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSupplier">
+      <soap12:operation soapAction="http://tempuri.org/AddNewSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <soap12:operation soapAction="http://tempuri.org/GetSuppliers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuotationRequest">
+      <soap12:operation soapAction="http://tempuri.org/CreateQuotationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TechFixWebServices">
+    <wsdl:port name="TechFixWebServicesSoap" binding="tns:TechFixWebServicesSoap">
+      <soap:address location="http://localhost:49706/TechFixWebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TechFixWebServicesSoap12" binding="tns:TechFixWebServicesSoap12">
+      <soap12:address location="http://localhost:49706/TechFixWebServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
