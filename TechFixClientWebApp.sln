@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechFixWebService", "UserService\TechFixWebService.csproj", "{45FEB001-2C40-405C-8115-8569036799D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechfixClientApp", "jj\TechfixClientApp.csproj", "{4701F967-5D3B-46A6-9362-7AAB1377A6EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechfixClientDesktopApp", "jj\TechfixClientDesktopApp.csproj", "{4701F967-5D3B-46A6-9362-7AAB1377A6EB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{45FEB001-2C40-405C-8115-8569036799D4} = {45FEB001-2C40-405C-8115-8569036799D4}
 	EndProjectSection
